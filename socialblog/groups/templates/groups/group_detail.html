@@ -9,13 +9,13 @@
 
             <!-- If user is in a group, a user can leave a group-->
             <a href="{% url 'groups:leave' slug=group.slug %}" class="btn btn-lg btn-fill btn-danger">
-            <span class="glyphicon glyphicon-remove-circle">Leave</span>
+                <span class="glyphicon glyphicon-remove-circle">Leave</span>
             </a>
 
         {% else %}
 
             <a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-lg btn-fill btn-danger">
-            <span class="glyphicon glyphicon-ok-circle">Join</span>
+                <span class="glyphicon glyphicon-ok-circle">Join</span>
             </a>
 
         {% endif %}
@@ -29,7 +29,7 @@
 
     <div class="col-md-8">
         {% if group.posts.count == 0 %}
-            <h2>No posts in this group yet!</h2>
+        <h2>No posts in this group yet!</h2>
         {% else %}
 
         {% for post in group.posts.all %}
