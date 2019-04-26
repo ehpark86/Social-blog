@@ -31,7 +31,7 @@ class JoinGroup(LoginRequiredMixin, generic.RedirectView):
         return reverse("groups:single", kwargs={"slug": self.kwargs.get("slug")})
 
     def get(self, request, *args, **kwargs):
-        group = get_object_or_404(Group,slug=self.kwargs.get("slug"))
+        group = get_object_or_404(Group, slug=self.kwargs.get("slug"))
 
         try:
             GroupMember.objects.create(user=self.request.user, group=group)
@@ -53,7 +53,7 @@ class LeaveGroup(LoginRequiredMixin, generic.RedirectView):
     def get(self, request, *args, **kwargs):
 
         try:
-        # make sure they can't leave a group if they are not part of a group
+            # make sure they can't leave a group if they are not part of a group
             membership = models.GroupMember.objects.filter(
                 user=self.request.user,
                 group__slug=self.kwargs.get("slug")
