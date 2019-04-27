@@ -1,0 +1,15 @@
+
+# The first instruction is what image we want to base our container on
+# We Use an official Python runtime as a parent image
+
+version: '3'
+
+services:
+  web:
+    build: .
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    container_name: social_blog
+    volumes:
+      - .:/social_blog
+    ports:
+      - "8000:8000"
