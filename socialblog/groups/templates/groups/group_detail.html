@@ -32,13 +32,13 @@
         <h2>No posts in this group yet!</h2>
         {% else %}
 
-        {% for post in group.posts.all %}
-            <!-- Similar to a block statement, include just injects html in the middle of a block -->
-            <!-- The underscore indicates a file that I'm using to inject into other html files -->
-
-            {% include "posts/_post.html" %}
-
-        {% endfor %}
+            {% for post in group.posts.all %}
+                <!-- Similar to a block statement, include just injects html in the middle of a block -->
+                <!-- The underscore indicates a file that I'm using to inject into other html files -->
+                {% include "posts/_post.html" %}
+            {% endfor %}
+    
+        {% endif %}
     </div>
 
 {% endblock %}
