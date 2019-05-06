@@ -17,7 +17,7 @@
             <p>Welcome to the Groups Page! Select a Group with a shared interest!</p>
         </div>
         {% if user.is_authenticated %}
-            <a href="{% url 'groups:create' %}" class="btn btn-md btn-fill btn-warning"><span class="glyphicon glyphicon-plus-sign"></span> Create New Group!</a>
+            <a style="margin-bottom: 5%" href="{% url 'groups:create' %}" class="btn btn-md btn-fill btn-warning">Create New Group!</a>
         {% endif %}
     </div>
 {% endblock %}

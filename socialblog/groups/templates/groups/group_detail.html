@@ -1,8 +1,8 @@
 {% extends "groups/group_base.html" %}
 {% block pregroup %}
 
-    <h1>{{ group.name }}</h1>
-    <h2>Member Count: {{ group.members.count }}</h2>
+    <h1 style="color:cornflowerblue">{{ group.name }}</h1>
+    <h3>Member Count: {{ group.members.count }}</h>
 
     <div class="content">
         {% if user in group.members.all %}
@@ -15,7 +15,8 @@
         {% else %}
 
             <a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-lg btn-fill btn-danger">
-                <span class="glyphicon glyphicon-ok-circle">Join</span>
+                <span class="oi oi-circle-check">Join</span>
+                
             </a>
 
         {% endif %}

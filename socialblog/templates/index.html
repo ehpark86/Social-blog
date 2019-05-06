@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-  
-<h1>Hello</h1>
+<div class="jumbotron" style="margin: 10%">
+  <h1 class="display-4">Welcome to Social Blog</h1>
+  <p class="lead">A platform for blogging about anything you want.</p>
+  <hr class="my-4">
+  <p>Follow Groups, Create Groups, and Post!</p>
+  <a class="btn btn-primary btn-lg" href="{% url 'groups:all' %}" role=" button">See Groups</a>
+</div>
 {% endblock content %}

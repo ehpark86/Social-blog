@@ -3,10 +3,12 @@
 
     <div class="container">
         <div class="row">
-            <!-- In case we want something before group content -->
-            {% block pregroup %}{% endblock %}
-            {% block group_content %}{% endblock %}
-            {% block postgroup %}{% endblock %}
+            <div class="col">
+                <!-- In case we want something before group content -->
+                {% block pregroup %}{% endblock %}
+                {% block group_content %}{% endblock %}
+                {% block postgroup %}{% endblock %}
+            </div>
         </div>
 
     </div>
