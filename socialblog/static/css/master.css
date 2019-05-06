@@ -1,0 +1,48 @@
+.logo {
+  color: pink;
+  -webkit-animation-name: logo;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s;
+  /* Safari 4.0 - 8.0 */
+  animation-name: logo;
+  animation-duration: 4s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes logo {
+  0% {
+    color: red;
+  }
+
+  25% {
+    color: yellow;
+  }
+
+  50% {
+    color: blue;
+  }
+
+  100% {
+    color: green;
+  }
+}
+
+/* Standard syntax */
+@keyframes logo {
+  0% {
+    color: red;
+  }
+
+  25% {
+    color: yellow;
+  }
+
+  50% {
+    color: blue;
+  }
+
+  100% {
+    color: green;
+  }
+}
+

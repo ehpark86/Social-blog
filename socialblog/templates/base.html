@@ -18,38 +18,68 @@
 
     <!-- Master CSS file -->
     {% load staticfiles %}
-    <link rel="stylesheet" href="{% static 'socialblog/css/master.css'%}">
+    <link rel="stylesheet" href="{% static 'static/css/master.css'%}">
 
 </head>
     <body>
         <!-- Navigation Bar -->
-        <nav class="navbar mynav" role="navigation" id="navbar">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand mynav" href="{% url 'home' %}">Social Blog</a>
-                    <ul class="nav navbar-nav navbar-right">
-                        {% if user.is_authenticated %}
-                        <li><a href="{% url 'posts:create' %}">Post</a></li>
-                        <li><a href="{% url 'groups:all' %}">Groups</a></li>
-                        <li><a href="{% url 'groups:create' %}">Create Group</a></li>
-                        <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
-
-                        {% else %}
-                        <li><a href="{% url 'groups:all' %}">Groups</a></li>
-                        <li><a href="{% url 'accounts:login' %}">Log In</a></li>
-                        <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
-                        {% endif %}
-                    </ul>
+            {% if user.is_authenticated %}
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" style="color: rgb(99, 156, 206)" href="{% url 'posts:create' %}">Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: rgb(0, 195, 255)" href="{% url 'groups:all' %}">Groups</a>
+                    </li>
+                    <li class="nav-item">
+                        <li class="nav-item"><a class="nav-link" style="color: rgb(0, 38, 255)" href="{% url 'groups:create' %}">Create Group</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: red" href="{% url 'accounts:logout' %}">Log Out</a>
+                    </li>
+                </ul>
             </div>
+            <div class="mx-auto order-0">
+                <a class="navbar-brand mynav logo" href="{% url 'home' %}">Social Blog</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            {% else %}
+
+            <div class="mx-auto order-0">
+                <a class="navbar-brand mynav logo" href="{% url 'home' %}">Social Blog</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: rgb(0, 195, 255)" href="{% url 'groups:all' %}">Groups</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: green" href="{% url 'accounts:login' %}">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: rgb(13, 255, 0)" href="{% url 'accounts:signup' %}">Sign Up</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            {% endif %}
+            </div>  
         </nav>
 
+        <div class="container mycontent">
+            {% block content %}
 
-
-      <div class="container mycontent">
-          {% block content %}
-
-          {% endblock content %}
-      </div>
-
+            {% endblock content %}
+        </div>
 
     </body>
 </html>
