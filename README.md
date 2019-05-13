@@ -1,6 +1,13 @@
 # Social-blog
 A Django application that is a combination of Twitter and Medium.
 
+## Functionality
+Once a user creates an account, they are able to login.
+Users can create posts to different groups.
+Users can join different groups.
+Users can also follow and unfollow groups of their choosing.
+
+
 ## Running the application
 
 * Using Docker will automatically install all the dependencies in requirements.txt and use Python version 3 required for running this application.
